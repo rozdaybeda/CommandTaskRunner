@@ -88,7 +88,7 @@ namespace CommandTaskRunner
                 return new TaskRunnerConfig(this, context, hierarchy, _icon);
             });
         }
-        
+
         private void ApplyVariable(string key, string value, ref string str)
         {
             str = str.Replace(key, value);
@@ -106,8 +106,6 @@ namespace CommandTaskRunner
             var build = sln.SolutionBuild;
             var slnCfg = (SolutionConfiguration2)build.ActiveConfiguration;
 
-            var proj = projs.Cast<Project>().FirstOrDefault(x => x.FileName.Contains(cmdsDir));
-
             ApplyVariable("$(ConfigurationName)", slnCfg.Name, ref str);
             ApplyVariable("$(DevEnvDir)", Path.GetDirectoryName(dte.FileName), ref str);
             ApplyVariable("$(PlatformName)", slnCfg.PlatformName, ref str);
@@ -118,6 +116,8 @@ namespace CommandTaskRunner
             ApplyVariable("$(SolutionName)", Path.GetFileNameWithoutExtension(sln.FileName), ref str);
             ApplyVariable("$(SolutionPath)", sln.FileName, ref str);
 
+            /*
+            var proj = projs.Cast<Project>().FirstOrDefault(x => x.FileName.Contains(cmdsDir));
             if (proj != null)
             {
                 var projCfg = proj.ConfigurationManager.ActiveConfiguration;
@@ -142,8 +142,9 @@ namespace CommandTaskRunner
                 ApplyVariable("$(TargetFileName)", targetFilename, ref str);
                 ApplyVariable("$(TargetName)", proj.Name, ref str);
                 ApplyVariable("$(TargetPath)", targetPath, ref str);
-            }
 
+            }
+            */
             return str;
         }
 

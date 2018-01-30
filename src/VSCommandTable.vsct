@@ -30,10 +30,10 @@
 
     <Symbols>
         <!-- This is the package guid. -->
-        <GuidSymbol name="guidAddCommandPackage" value="{bc2a198c-4598-4e8f-97a6-249573ca88a9}" />
+        <GuidSymbol name="guidAddCommandPackage" value="{0A4BD150-01BA-41C1-B766-31188241E5E6}" />
 
         <!-- This is the guid used to group the menu commands together -->
-        <GuidSymbol name="guidCommandCmdSet" value="{1b181a1d-76a0-4629-8e2a-8c24d86c29bd}">
+        <GuidSymbol name="guidCommandCmdSet" value="{73EB3754-E03A-49CA-B9B5-6494BCD0A4F0}">
             <!--<IDSymbol name="MyMenuGroup" value="1" />-->
             <IDSymbol name="AddCommandId" value="100" />
         </GuidSymbol>
